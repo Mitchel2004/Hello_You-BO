@@ -1594,8 +1594,8 @@ def spacebarvartrue():
 def startscreen():
     if spacebarvar.svar == False:
         keyboard.on_press_key("return", lambda _:spacebarvartrue())
-        # ᵅᵝ·⁰¹²³⁴⁵⁶⁷⁸⁹
-        version = "ᵝ⁰·⁶·⁰"
+        # ⁰¹²³⁴⁵⁶⁷⁸⁹⁻ᵅᵝ·
+        version = "⁰·⁶·¹⁻ᵝ"
         print("\033[40;36m" + r"   _    __ __              __     __  ")
         print(r"  | |  / // /__  __ _____ / /_   / /_ ")
         print(r"  | | / // // / / // ___// __ \ / __/ ")
@@ -1610,7 +1610,7 @@ def startscreen():
         print(" ╔═══════════════════════════════════╗")
         print(" ║ << DRUK OP ENTER OM TE STARTEN >> ║")
         print(" ╚═══════════════════════════════════╝")
-        print("\033[40;90m\n\n ᴹⁱᵗᶜʰᵉˡ ᴷˡⁱʲⁿ                  " + version + "\033[40;0m")
+        print("\033[40;90m\n\n ᴹⁱᵗᶜʰᵉˡ ᴷˡⁱʲⁿ                 " + version + "\033[40;0m")
         time.sleep(0.3)
         clear()
         print("\033[40;36m" + r"   _    __ __              __     __  ")
@@ -1627,7 +1627,7 @@ def startscreen():
         print(" ╔═══════════════════════════════════╗")
         print(" ║\033[40;96m << DRUK OP ENTER OM TE STARTEN >> \033[40;36m║")
         print(" ╚═══════════════════════════════════╝")
-        print("\033[40;90m\n\n ᴹⁱᵗᶜʰᵉˡ ᴷˡⁱʲⁿ                  " + version + "\033[40;0m")
+        print("\033[40;90m\n\n ᴹⁱᵗᶜʰᵉˡ ᴷˡⁱʲⁿ                 " + version + "\033[40;0m")
         time.sleep(0.3)
         clear()
         print("\033[40;36m" + r"   _    __ __              __     __  ")
@@ -1644,7 +1644,7 @@ def startscreen():
         print(" ╔═══════════════════════════════════╗")
         print(" ║ << DRUK OP ENTER OM TE STARTEN >> ║")
         print(" ╚═══════════════════════════════════╝")
-        print("\033[40;90m\n\n ᴹⁱᵗᶜʰᵉˡ ᴷˡⁱʲⁿ                  " + version + "\033[40;0m")
+        print("\033[40;90m\n\n ᴹⁱᵗᶜʰᵉˡ ᴷˡⁱʲⁿ                 " + version + "\033[40;0m")
         time.sleep(0.3)
         clear()
         startscreen()
