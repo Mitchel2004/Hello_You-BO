@@ -31,7 +31,7 @@ if birthdaydaysthisyear > 0:
 elif birthdaydaysthisyear == 0:
     if today.year % 4 == 3:
         cel = "366"
-    else:
+    else:   
         cel = "365"
 else:
     if len(str(birthdaydaysnextyear)) < 3:
@@ -46,8 +46,19 @@ inventorylist = []
 housinglist = []
 worklist = []
 
+def end1():
+    print("\033[40;32mGefeliciteerd " + str(*playernamelist) + "!\n")
+    print("Je hebt een gemiddeld inkomen en\ngenoeg geld voor je eigen huis.\n\nJe bent geen vluchteling, maar een\ngewone burger.")
+    time.sleep(0.5)
+    clear()
+    print("\033[40;92mGefeliciteerd " + str(*playernamelist) + "!\n")
+    print("Je hebt een gemiddeld inkomen en\ngenoeg geld voor je eigen huis.\n\nJe bent geen vluchteling, maar een\ngewone burger.")
+    time.sleep(0.5)
+    clear()
+    end1()
+    
 def question21():
-    print("\033[40;0mNaam: " + str(*playernamelist))
+    print("\033[0mNaam: " + str(*playernamelist))
     print("Rugzak: " + str(*inventorylist))
     print("Woning: " + str(*housinglist))
     print("Werk: " + str(*worklist))
@@ -57,14 +68,14 @@ def question21():
     print("A    .")
     print("B    .")
     print("C    .")
-    answer = input(">" + "\033[40;36m")
+    answer = input("> \033[38;2;0;128;128m")
     answerup = answer.upper()
     if answerup == "A":
         clear()
         #question
     elif answerup == "B":
         clear()
-        print("\033[40;91mJe kon het niet winnen.\n\033[40;33m")
+        print("\033[40;91mJe kon het niet winnen.\n\033[38;2;192;192;0m")
         t = 5
         while t != 0:
             print(t)
@@ -77,7 +88,7 @@ def question21():
         clear()
         #question
     else:
-        print("\033[40;31mTyp alleen de letters A, B of C!\n\033[40;33m")
+        print("\033[38;2;192;0;0mTyp alleen de letters A, B of C!\n\033[38;2;192;192;0m")
         t = 3
         while t != 0:
             print(t)
@@ -88,7 +99,7 @@ def question21():
         question21()
 
 def question20():
-    print("\033[40;0mNaam: " + str(*playernamelist))
+    print("\033[0mNaam: " + str(*playernamelist))
     print("Rugzak: " + str(*inventorylist))
     print("Woning: " + str(*housinglist))
     print("Werk: " + str(*worklist))
@@ -98,14 +109,14 @@ def question20():
     print("A    .")
     print("B    .")
     print("C    .")
-    answer = input(">" + "\033[40;36m")
+    answer = input("> \033[38;2;0;128;128m")
     answerup = answer.upper()
     if answerup == "A":
         clear()
         #question
     elif answerup == "B":
         clear()
-        print("\033[40;91mJe kon het niet winnen.\n\033[40;33m")
+        print("\033[40;91mJe kon het niet winnen.\n\033[38;2;192;192;0m")
         t = 5
         while t != 0:
             print(t)
@@ -118,7 +129,7 @@ def question20():
         clear()
         #question
     else:
-        print("\033[40;31mTyp alleen de letters A, B of C!\n\033[40;33m")
+        print("\033[38;2;192;0;0mTyp alleen de letters A, B of C!\n\033[38;2;192;192;0m")
         t = 3
         while t != 0:
             print(t)
@@ -129,7 +140,7 @@ def question20():
         question20()
 
 def question19():
-    print("\033[40;0mNaam: " + str(*playernamelist))
+    print("\033[0mNaam: " + str(*playernamelist))
     print("Rugzak: " + str(*inventorylist))
     print("Woning: " + str(*housinglist))
     print("Werk: " + str(*worklist))
@@ -139,14 +150,14 @@ def question19():
     print("A    .")
     print("B    .")
     print("C    .")
-    answer = input(">" + "\033[40;36m")
+    answer = input("> \033[38;2;0;128;128m")
     answerup = answer.upper()
     if answerup == "A":
         clear()
         #question
     elif answerup == "B":
         clear()
-        print("\033[40;91mJe kon het niet winnen.\n\033[40;33m")
+        print("\033[40;91mJe kon het niet winnen.\n\033[38;2;192;192;0m")
         t = 5
         while t != 0:
             print(t)
@@ -159,7 +170,7 @@ def question19():
         clear()
         #question
     else:
-        print("\033[40;31mTyp alleen de letters A, B of C!\n\033[40;33m")
+        print("\033[38;2;192;0;0mTyp alleen de letters A, B of C!\n\033[38;2;192;192;0m")
         t = 3
         while t != 0:
             print(t)
@@ -170,7 +181,7 @@ def question19():
         question19()
 
 def question18():
-    print("\033[40;0mNaam: " + str(*playernamelist))
+    print("\033[0mNaam: " + str(*playernamelist))
     print("Rugzak: " + str(*inventorylist))
     print("Woning: " + str(*housinglist))
     print("Werk: " + str(*worklist))
@@ -180,14 +191,14 @@ def question18():
     print("A    .")
     print("B    .")
     print("C    .")
-    answer = input(">" + "\033[40;36m")
+    answer = input("> \033[38;2;0;128;128m")
     answerup = answer.upper()
     if answerup == "A":
         clear()
         #question
     elif answerup == "B":
         clear()
-        print("\033[40;91mJe kon het niet winnen.\n\033[40;33m")
+        print("\033[40;91mJe kon het niet winnen.\n\033[38;2;192;192;0m")
         t = 5
         while t != 0:
             print(t)
@@ -200,7 +211,7 @@ def question18():
         clear()
         #question
     else:
-        print("\033[40;31mTyp alleen de letters A, B of C!\n\033[40;33m")
+        print("\033[38;2;192;0;0mTyp alleen de letters A, B of C!\n\033[38;2;192;192;0m")
         t = 3
         while t != 0:
             print(t)
@@ -211,7 +222,7 @@ def question18():
         question18()
 
 def question17():
-    print("\033[40;0mNaam: " + str(*playernamelist))
+    print("\033[0mNaam: " + str(*playernamelist))
     print("Rugzak: " + str(*inventorylist))
     print("Woning: " + str(*housinglist))
     print("Werk: " + str(*worklist))
@@ -221,14 +232,14 @@ def question17():
     print("A    .")
     print("B    .")
     print("C    .")
-    answer = input(">" + "\033[40;36m")
+    answer = input("> \033[38;2;0;128;128m")
     answerup = answer.upper()
     if answerup == "A":
         clear()
         #question
     elif answerup == "B":
         clear()
-        print("\033[40;91mJe kon het niet winnen.\n\033[40;33m")
+        print("\033[40;91mJe kon het niet winnen.\n\033[38;2;192;192;0m")
         t = 5
         while t != 0:
             print(t)
@@ -241,7 +252,7 @@ def question17():
         clear()
         #question
     else:
-        print("\033[40;31mTyp alleen de letters A, B of C!\n\033[40;33m")
+        print("\033[38;2;192;0;0mTyp alleen de letters A, B of C!\n\033[38;2;192;192;0m")
         t = 3
         while t != 0:
             print(t)
@@ -252,7 +263,7 @@ def question17():
         question17()
 
 def question16():
-    print("\033[40;0mNaam: " + str(*playernamelist))
+    print("\033[0mNaam: " + str(*playernamelist))
     print("Rugzak: " + str(*inventorylist))
     print("Woning: " + str(*housinglist))
     print("Werk: " + str(*worklist))
@@ -262,14 +273,14 @@ def question16():
     print("A    .")
     print("B    .")
     print("C    .")
-    answer = input(">" + "\033[40;36m")
+    answer = input("> \033[38;2;0;128;128m")
     answerup = answer.upper()
     if answerup == "A":
         clear()
         #question
     elif answerup == "B":
         clear()
-        print("\033[40;91mJe kon het niet winnen.\n\033[40;33m")
+        print("\033[40;91mJe kon het niet winnen.\n\033[38;2;192;192;0m")
         t = 5
         while t != 0:
             print(t)
@@ -282,7 +293,7 @@ def question16():
         clear()
         #question
     else:
-        print("\033[40;31mTyp alleen de letters A, B of C!\n\033[40;33m")
+        print("\033[38;2;192;0;0mTyp alleen de letters A, B of C!\n\033[38;2;192;192;0m")
         t = 3
         while t != 0:
             print(t)
@@ -293,7 +304,7 @@ def question16():
         question16()
 
 def question15():
-    print("\033[40;0mNaam: " + str(*playernamelist))
+    print("\033[0mNaam: " + str(*playernamelist))
     print("Rugzak: " + str(*inventorylist))
     print("Woning: " + str(*housinglist))
     print("Werk: " + str(*worklist))
@@ -303,14 +314,14 @@ def question15():
     print("A    .")
     print("B    .")
     print("C    .")
-    answer = input(">" + "\033[40;36m")
+    answer = input("> \033[38;2;0;128;128m")
     answerup = answer.upper()
     if answerup == "A":
         clear()
         #question
     elif answerup == "B":
         clear()
-        print("\033[40;91mJe kon het niet winnen.\n\033[40;33m")
+        print("\033[40;91mJe kon het niet winnen.\n\033[38;2;192;192;0m")
         t = 5
         while t != 0:
             print(t)
@@ -323,7 +334,7 @@ def question15():
         clear()
         #question
     else:
-        print("\033[40;31mTyp alleen de letters A, B of C!\n\033[40;33m")
+        print("\033[38;2;192;0;0mTyp alleen de letters A, B of C!\n\033[38;2;192;192;0m")
         t = 3
         while t != 0:
             print(t)
@@ -334,7 +345,7 @@ def question15():
         question15()
 
 def question14():
-    print("\033[40;0mNaam: " + str(*playernamelist))
+    print("\033[0mNaam: " + str(*playernamelist))
     print("Rugzak: " + str(*inventorylist))
     print("Woning: " + str(*housinglist))
     print("Werk: " + str(*worklist))
@@ -344,14 +355,14 @@ def question14():
     print("A    .")
     print("B    .")
     print("C    .")
-    answer = input(">" + "\033[40;36m")
+    answer = input("> \033[38;2;0;128;128m")
     answerup = answer.upper()
     if answerup == "A":
         clear()
         #question
     elif answerup == "B":
         clear()
-        print("\033[40;91mJe kon het niet winnen.\n\033[40;33m")
+        print("\033[40;91mJe kon het niet winnen.\n\033[38;2;192;192;0m")
         t = 5
         while t != 0:
             print(t)
@@ -364,7 +375,7 @@ def question14():
         clear()
         #question
     else:
-        print("\033[40;31mTyp alleen de letters A, B of C!\n\033[40;33m")
+        print("\033[38;2;192;0;0mTyp alleen de letters A, B of C!\n\033[38;2;192;192;0m")
         t = 3
         while t != 0:
             print(t)
@@ -375,7 +386,7 @@ def question14():
         question14()
 
 def question13():
-    print("\033[40;0mNaam: " + str(*playernamelist))
+    print("\033[0mNaam: " + str(*playernamelist))
     print("Rugzak: " + str(*inventorylist))
     print("Woning: " + str(*housinglist))
     print("Werk: " + str(*worklist))
@@ -385,14 +396,14 @@ def question13():
     print("A    .")
     print("B    .")
     print("C    .")
-    answer = input(">" + "\033[40;36m")
+    answer = input("> \033[38;2;0;128;128m")
     answerup = answer.upper()
     if answerup == "A":
         clear()
         #question
     elif answerup == "B":
         clear()
-        print("\033[40;91mJe kon het niet winnen.\n\033[40;33m")
+        print("\033[40;91mJe kon het niet winnen.\n\033[38;2;192;192;0m")
         t = 5
         while t != 0:
             print(t)
@@ -405,7 +416,7 @@ def question13():
         clear()
         #question
     else:
-        print("\033[40;31mTyp alleen de letters A, B of C!\n\033[40;33m")
+        print("\033[38;2;192;0;0mTyp alleen de letters A, B of C!\n\033[38;2;192;192;0m")
         t = 3
         while t != 0:
             print(t)
@@ -416,7 +427,7 @@ def question13():
         question13()
 
 def question12():
-    print("\033[40;0mNaam: " + str(*playernamelist))
+    print("\033[0mNaam: " + str(*playernamelist))
     print("Rugzak: " + str(*inventorylist))
     print("Woning: " + str(*housinglist))
     print("Werk: " + str(*worklist))
@@ -426,14 +437,14 @@ def question12():
     print("A    .")
     print("B    .")
     print("C    .")
-    answer = input(">" + "\033[40;36m")
+    answer = input("> \033[38;2;0;128;128m")
     answerup = answer.upper()
     if answerup == "A":
         clear()
         #question
     elif answerup == "B":
         clear()
-        print("\033[40;91mJe kon het niet winnen.\n\033[40;33m")
+        print("\033[40;91mJe kon het niet winnen.\n\033[38;2;192;192;0m")
         t = 5
         while t != 0:
             print(t)
@@ -446,7 +457,7 @@ def question12():
         clear()
         #question
     else:
-        print("\033[40;31mTyp alleen de letters A, B of C!\n\033[40;33m")
+        print("\033[38;2;192;0;0mTyp alleen de letters A, B of C!\n\033[38;2;192;192;0m")
         t = 3
         while t != 0:
             print(t)
@@ -457,7 +468,7 @@ def question12():
         question12()
 
 def question11():
-    print("\033[40;0mNaam: " + str(*playernamelist))
+    print("\033[0mNaam: " + str(*playernamelist))
     print("Rugzak: " + str(*inventorylist))
     print("Woning: " + str(*housinglist))
     print("Werk: " + str(*worklist))
@@ -467,14 +478,14 @@ def question11():
     print("A    .")
     print("B    .")
     print("C    .")
-    answer = input(">" + "\033[40;36m")
+    answer = input("> \033[38;2;0;128;128m")
     answerup = answer.upper()
     if answerup == "A":
         clear()
         #question
     elif answerup == "B":
         clear()
-        print("\033[40;91mJe kon het niet winnen.\n\033[40;33m")
+        print("\033[40;91mJe kon het niet winnen.\n\033[38;2;192;192;0m")
         t = 5
         while t != 0:
             print(t)
@@ -487,7 +498,7 @@ def question11():
         clear()
         #question
     else:
-        print("\033[40;31mTyp alleen de letters A, B of C!\n\033[40;33m")
+        print("\033[38;2;192;0;0mTyp alleen de letters A, B of C!\n\033[38;2;192;192;0m")
         t = 3
         while t != 0:
             print(t)
@@ -498,37 +509,25 @@ def question11():
         question11()
 
 def question10():
-    print("\033[40;0mNaam: " + str(*playernamelist))
+    print("\033[0mNaam: " + str(*playernamelist))
     print("Rugzak: " + str(*inventorylist))
     print("Woning: " + str(*housinglist))
     print("Werk: " + str(*worklist))
     print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
-    print(".")
+    print("Je start een opleiding elektricien\nen slaagt na een paar jaar.\nWat nu?")
     print("───────────────────────────────────────")
-    print("A    .")
-    print("B    .")
-    print("C    .")
-    answer = input(">" + "\033[40;36m")
+    print("A    Start je eigen bedrijf")
+    print("B    Werk bij een groot bedrijf")
+    answer = input("> \033[38;2;0;128;128m")
     answerup = answer.upper()
     if answerup == "A":
         clear()
-        #question
+        question14()
     elif answerup == "B":
         clear()
-        print("\033[40;91mJe kon het niet winnen.\n\033[40;33m")
-        t = 5
-        while t != 0:
-            print(t)
-            time.sleep(1)
-            t -= 1
-            print("\033[A\033[A")
-        clear()
-        question1()
-    elif answerup == "C":
-        clear()
-        #question
+        end1()
     else:
-        print("\033[40;31mTyp alleen de letters A, B of C!\n\033[40;33m")
+        print("\033[38;2;192;0;0mTyp alleen de letters A of B!\n\033[38;2;192;192;0m")
         t = 3
         while t != 0:
             print(t)
@@ -539,37 +538,25 @@ def question10():
         question10()
 
 def question9():
-    print("\033[40;0mNaam: " + str(*playernamelist))
+    print("\033[0mNaam: " + str(*playernamelist))
     print("Rugzak: " + str(*inventorylist))
     print("Woning: " + str(*housinglist))
     print("Werk: " + str(*worklist))
     print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
-    print(".")
+    print("Je bent aangenomen bij een supermarkt.\nTijdens werk zie je een man appels\nonder zijn shirt stoppen en de winkel\nuitlopen.\nWat doe je?")
     print("───────────────────────────────────────")
-    print("A    .")
-    print("B    .")
-    print("C    .")
-    answer = input(">" + "\033[40;36m")
+    print("A    Bel de politie")
+    print("B    Doe niks")
+    answer = input("> \033[38;2;0;128;128m")
     answerup = answer.upper()
     if answerup == "A":
         clear()
-        #question
+        question13()
     elif answerup == "B":
         clear()
-        print("\033[40;91mJe kon het niet winnen.\n\033[40;33m")
-        t = 5
-        while t != 0:
-            print(t)
-            time.sleep(1)
-            t -= 1
-            print("\033[A\033[A")
-        clear()
-        question1()
-    elif answerup == "C":
-        clear()
-        #question
+        question17()
     else:
-        print("\033[40;31mTyp alleen de letters A, B of C!\n\033[40;33m")
+        print("\033[38;2;192;0;0mTyp alleen de letters A of B!\n\033[38;2;192;192;0m")
         t = 3
         while t != 0:
             print(t)
@@ -580,37 +567,32 @@ def question9():
         question9()
 
 def question8():
-    print("\033[40;0mNaam: " + str(*playernamelist))
+    print("\033[0mNaam: " + str(*playernamelist))
     print("Rugzak: " + str(*inventorylist))
     print("Woning: " + str(*housinglist))
     print("Werk: " + str(*worklist))
     print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
-    print(".")
+    print("Je wordt naar de grote stad gewezen\nen daar krijg je een paspoort en een\nklein appartementje. Je moet een\nbaan vinden om het te kunnen betalen.\nWat ga je doen?")
     print("───────────────────────────────────────")
-    print("A    .")
-    print("B    .")
-    print("C    .")
-    answer = input(">" + "\033[40;36m")
+    print("A    Restaurant medewerker")
+    print("B    McRonald's kassamedewerker")
+    print("C    Vakkenvuller")
+    answer = input("> \033[38;2;0;128;128m")
     answerup = answer.upper()
     if answerup == "A":
+        worklist.append("Restaurant medewerker")
         clear()
-        #question
+        question11()
     elif answerup == "B":
+        worklist.append("McRonald's kassamedewerker")
         clear()
-        print("\033[40;91mJe kon het niet winnen.\n\033[40;33m")
-        t = 5
-        while t != 0:
-            print(t)
-            time.sleep(1)
-            t -= 1
-            print("\033[A\033[A")
-        clear()
-        question1()
+        question12()
     elif answerup == "C":
+        worklist.append("Vakkenvuller")
         clear()
-        #question
+        question9()
     else:
-        print("\033[40;31mTyp alleen de letters A, B of C!\n\033[40;33m")
+        print("\033[38;2;192;0;0mTyp alleen de letters A, B of C!\n\033[38;2;192;192;0m")
         t = 3
         while t != 0:
             print(t)
@@ -621,7 +603,7 @@ def question8():
         question8()
 
 def question7():
-    print("\033[40;0mNaam: " + str(*playernamelist))
+    print("\033[0mNaam: " + str(*playernamelist))
     print("Rugzak: " + str(*inventorylist))
     print("Woning: " + str(*housinglist))
     print("Werk: " + str(*worklist))
@@ -631,14 +613,15 @@ def question7():
     print("A    Zoek een baan")
     print("B    Overval een winkel")
     print("C    Doe een opleiding")
-    answer = input(">" + "\033[40;36m")
+    answer = input("> \033[38;2;0;128;128m")
     answerup = answer.upper()
     if answerup == "A":
+        worklist.append("Vakkenvuller")
         clear()
         question9()
     elif answerup == "B":
         clear()
-        print("\033[40;91mJe wordt gepakt en krijgt\neen gevangenisstraf.\nWacht 30 seconden.\n\033[40;33m")
+        print("\033[40;91mJe wordt gepakt en krijgt\neen gevangenisstraf.\nWacht 30 seconden.\n\033[38;2;192;192;0m")
         t = 5
         while t != 0:
             print(t)
@@ -1221,7 +1204,7 @@ def question7():
         clear()
         question10()
     else:
-        print("\033[40;31mTyp alleen de letters A, B of C!\n\033[40;33m")
+        print("\033[38;2;192;0;0mTyp alleen de letters A, B of C!\n\033[38;2;192;192;0m")
         t = 3
         while t != 0:
             print(t)
@@ -1232,7 +1215,7 @@ def question7():
         question7()
 
 def question6():
-    print("\033[40;0mNaam: " + str(*playernamelist))
+    print("\033[0mNaam: " + str(*playernamelist))
     print("Rugzak: " + str(*inventorylist))
     print("Woning: " + str(*housinglist))
     print("Werk: " + str(*worklist))
@@ -1241,14 +1224,15 @@ def question6():
     print("───────────────────────────────────────")
     print("A    Vraag de weg naar een grote stad")
     print("B    Blijf in het dorpje")
-    answer = input(">" + "\033[40;36m")
+    answer = input("> \033[38;2;0;128;128m")
     answerup = answer.upper()
     if answerup == "A":
+        housinglist.append("Appartementje")
         clear()
         question8()
     elif answerup == "B":
         clear()
-        print("\033[40;91mJe werd terug gestuurd omdat je\nillegaal in het land verbleef.\n\033[40;33m")
+        print("\033[40;91mJe werd terug gestuurd omdat je\nillegaal in het land verbleef.\n\033[38;2;192;192;0m")
         t = 5
         while t != 0:
             print(t)
@@ -1258,7 +1242,7 @@ def question6():
         clear()
         question4()
     else:
-        print("\033[40;31mTyp alleen de letters A, B of C!\n\033[40;33m")
+        print("\033[38;2;192;0;0mTyp alleen de letters A of B!\n\033[38;2;192;192;0m")
         t = 3
         while t != 0:
             print(t)
@@ -1269,7 +1253,7 @@ def question6():
         question6()
 
 def question5():
-    print("\033[40;0mNaam: " + str(*playernamelist))
+    print("\033[0mNaam: " + str(*playernamelist))
     print("Rugzak: " + str(*inventorylist))
     print("Woning: " + str(*housinglist))
     print("Werk: " + str(*worklist))
@@ -1278,14 +1262,15 @@ def question5():
     print("───────────────────────────────────────")
     print("A    Vraag de weg naar een grote stad")
     print("B    Blijf in het dorpje")
-    answer = input(">" + "\033[40;36m")
+    answer = input("> \033[38;2;0;128;128m")
     answerup = answer.upper()
     if answerup == "A":
+        housinglist.append("Appartementje")
         clear()
         question8()
     elif answerup == "B":
         clear()
-        print("\033[40;91mJe werd terug gestuurd omdat je\nillegaal in het land verbleef.\n\033[40;33m")
+        print("\033[40;91mJe werd terug gestuurd omdat je\nillegaal in het land verbleef.\n\033[38;2;192;192;0m")
         t = 5
         while t != 0:
             print(t)
@@ -1295,7 +1280,7 @@ def question5():
         clear()
         question4()
     else:
-        print("\033[40;31mTyp alleen de letters A, B of C!\n\033[40;33m")
+        print("\033[38;2;192;0;0mTyp alleen de letters A of B!\n\033[38;2;192;192;0m")
         t = 3
         while t != 0:
             print(t)
@@ -1306,7 +1291,7 @@ def question5():
         question5()
 
 def question4():
-    print("\033[40;0mNaam: " + str(*playernamelist))
+    print("\033[0mNaam: " + str(*playernamelist))
     print("Rugzak: " + str(*inventorylist))
     print("Woning: " + str(*housinglist))
     print("Werk: " + str(*worklist))
@@ -1316,7 +1301,7 @@ def question4():
     print("A    Zandwoestijn")
     print("B    Buurland")
     print("C    Overzees land")
-    answer = input(">" + "\033[40;36m")
+    answer = input("> \033[38;2;0;128;128m")
     answerup = answer.upper()
     if answerup == "A":
         if str(*inventorylist) == "Zakmes":
@@ -1324,7 +1309,7 @@ def question4():
             question5()
         elif str(*inventorylist) == "Paspoort" or str(*inventorylist) == "":
             clear()
-            print("\033[40;91mJe droogde uit.\n\033[40;33m")
+            print("\033[40;91mJe droogde uit.\n\033[38;2;192;192;0m")
             t = 5
             while t != 0:
                 print(t)
@@ -1339,7 +1324,7 @@ def question4():
     elif answerup == "B":
         if str(*inventorylist) == "Zakmes":
             clear()
-            print("\033[40;91mJe mocht het land niet in wegens\nwapenbezit.\n\033[40;33m")
+            print("\033[40;91mJe mocht het land niet in wegens\nwapenbezit.\n\033[38;2;192;192;0m")
             t = 5
             while t != 0:
                 print(t)
@@ -1349,11 +1334,12 @@ def question4():
             clear()
             question4()
         elif str(*inventorylist) == "Paspoort" or str(*inventorylist) == "":
+            housinglist.append("Asielzoekerscentrum")
             clear()
             question7()
         else:
             clear()
-            print("\033[40;91mJe mocht het land niet in omdat\nje geen paspoort had.\n\033[40;33m")
+            print("\033[40;91mJe mocht het land niet in omdat\nje geen paspoort had.\n\033[38;2;192;192;0m")
             t = 5
             while t != 0:
                 print(t)
@@ -1365,7 +1351,7 @@ def question4():
     elif answerup == "C":
         if str(*inventorylist) == "Zakmes":
             clear()
-            print("\033[40;91mJe stak per ongeluk de rubberboot lek\nmet je zakmes.\n\033[40;33m")
+            print("\033[40;91mJe stak per ongeluk de rubberboot lek\nmet je zakmes.\n\033[38;2;192;192;0m")
             t = 5
             while t != 0:
                 print(t)
@@ -1375,10 +1361,11 @@ def question4():
             clear()
             question4()
         else:
+            housinglist.append("Asielzoekerscentrum")
             clear()
             question7()
     else:
-        print("\033[40;31mTyp alleen de letters A, B of C!\n\033[40;33m")
+        print("\033[38;2;192;0;0mTyp alleen de letters A, B of C!\n\033[38;2;192;192;0m")
         t = 3
         while t != 0:
             print(t)
@@ -1389,7 +1376,7 @@ def question4():
         question4()
 
 def question3():
-    print("\033[40;0mNaam: " + str(*playernamelist))
+    print("\033[0mNaam: " + str(*playernamelist))
     print("Rugzak: " + str(*inventorylist))
     print("Woning: " + str(*housinglist))
     print("Werk: " + str(*worklist))
@@ -1399,11 +1386,11 @@ def question3():
     print("A    Zandwoestijn")
     print("B    Buurland")
     print("C    Overzees land")
-    answer = input(">" + "\033[40;36m")
+    answer = input("> \033[38;2;0;128;128m")
     answerup = answer.upper()
     if answerup == "A":
         clear()
-        print("\033[40;91mJe droogde uit.\n\033[40;33m")
+        print("\033[40;91mJe droogde uit.\n\033[38;2;192;192;0m")
         t = 5
         while t != 0:
             print(t)
@@ -1413,13 +1400,15 @@ def question3():
         clear()
         question4()
     elif answerup == "B":
+        housinglist.append("Asielzoekerscentrum")
         clear()
         question7()
     elif answerup == "C":
+        housinglist.append("Asielzoekerscentrum")
         clear()
         question7()
     else:
-        print("\033[40;31mTyp alleen de letters A, B of C!\n\033[40;33m")
+        print("\033[38;2;192;0;0mTyp alleen de letters A, B of C!\n\033[38;2;192;192;0m")
         t = 3
         while t != 0:
             print(t)
@@ -1430,7 +1419,7 @@ def question3():
         question3()
 
 def question2():
-    print("\033[40;0mNaam: " + str(*playernamelist))
+    print("\033[0mNaam: " + str(*playernamelist))
     print("Rugzak: " + str(*inventorylist))
     print("Woning: " + str(*housinglist))
     print("Werk: " + str(*worklist))
@@ -1440,7 +1429,7 @@ def question2():
     print("A    Zakmes")
     print("B    Paspoort")
     print("C    Fles water")
-    answer = input(">" + "\033[40;36m")
+    answer = input("> \033[38;2;0;128;128m")
     answerup = answer.upper()
     if answerup == "A":
         inventorylist.append("Zakmes")
@@ -1455,7 +1444,7 @@ def question2():
         clear()
         question4()
     else:
-        print("\033[40;31mTyp alleen de letters A, B of C!\n\033[40;33m")
+        print("\033[38;2;192;0;0mTyp alleen de letters A, B of C!\n\033[38;2;192;192;0m")
         t = 3
         while t != 0:
             print(t)
@@ -1466,7 +1455,7 @@ def question2():
         question2()
 
 def question1():
-    print("\033[40;0mNaam: " + str(*playernamelist))
+    print("\033[0mNaam: " + str(*playernamelist))
     print("Rugzak: " + str(*inventorylist))
     print("Woning: " + str(*housinglist))
     print("Werk: " + str(*worklist))
@@ -1476,14 +1465,14 @@ def question1():
     print("A    Vluchten")
     print("B    Vechten")
     print("C    Overgeven")
-    answer = input(">" + "\033[40;36m")
+    answer = input("> \033[38;2;0;128;128m")
     answerup = answer.upper()
     if answerup == "A":
         clear()
         question2()
     elif answerup == "B":
         clear()
-        print("\033[40;91mJe kon het niet winnen.\n\033[40;33m")
+        print("\033[40;91mJe kon het niet winnen.\n\033[38;2;192;192;0m")
         t = 5
         while t != 0:
             print(t)
@@ -1496,7 +1485,7 @@ def question1():
         clear()
         question3()
     else:
-        print("\033[40;31mTyp alleen de letters A, B of C!\n\033[40;33m")
+        print("\033[38;2;192;0;0mTyp alleen de letters A, B of C!\n\033[38;2;192;192;0m")
         t = 3
         while t != 0:
             print(t)
@@ -1508,15 +1497,15 @@ def question1():
 
 def startinfo():
     clear()
-    print("\033[40;0mHallo vreemdeling! Wat is je naam?")
-    playername = input("Naam: " + "\033[40;36m")
+    print("\033[0mHallo vreemdeling! Wat is je naam?")
+    playername = input("Naam: \033[38;2;0;128;128m")
     
     characterslist = ["!", "¡", "%", "*", "(", "‘", ")", "’", "=", "+", "×", "÷", "\t", "®", "[", "{", "«", "]", "}", "»", "\\", "|", "¬", "¦", "§", ";", ":", "¶", "°", "'", '"', "©", ",", "<", ".", ">", "/", "?", "¿", "  "]
     checkplayername = [char for char in characterslist if char in playername]
     
     for c in checkplayername:
         if c in characterslist:
-            print("\033[40;31mJe naam mag niet het volgende bevatten:\n- Leestekens\n- Aanhalingstekens\n- Haakjes\n- Symbolen\n- Herhalende spaties\n\033[40;33m")
+            print("\033[38;2;192;0;0mJe naam mag niet het volgende bevatten:\n- Leestekens\n- Aanhalingstekens\n- Haakjes\n- Symbolen\n- Herhalende spaties\n\033[38;2;192;192;0m")
             t = 5
             while t != 0:
                 print(t)
@@ -1526,7 +1515,7 @@ def startinfo():
             startinfo()
     
     if playername == "":
-        print("\033[40;31mJe naam mag niet niks zijn!\n\033[40;33m")
+        print("\033[38;2;192;0;0mJe naam mag niet niks zijn!\n\033[38;2;192;192;0m")
         t = 3
         while t != 0:
             print(t)
@@ -1535,7 +1524,7 @@ def startinfo():
             print("\033[A\033[A")
         startinfo()
     elif playername == " ":
-        print("\033[40;31mJe naam mag niet een spatie zijn!\n\033[40;33m")
+        print("\033[38;2;192;0;0mJe naam mag niet een spatie zijn!\n\033[38;2;192;192;0m")
         t = 3
         while t != 0:
             print(t)
@@ -1544,7 +1533,7 @@ def startinfo():
             print("\033[A\033[A")
         startinfo()
     elif len(playername) == 33 or (len(playername) - 33) % 39 == 0:
-        print("\033[40;31m\033[AJe naam mag niet langer dan\n32 karakters zijn!\n\033[40;33m")
+        print("\033[38;2;192;0;0m\033[AJe naam mag niet langer dan\n24 karakters zijn!\n\033[38;2;192;192;0m")
         t = 3
         while t != 0:
             print(t)
@@ -1552,8 +1541,8 @@ def startinfo():
             t -= 1
             print("\033[A\033[A")
         startinfo()
-    elif len(playername) > 32:
-        print("\033[40;31mJe naam mag niet langer dan\n32 karakters zijn!\n\033[40;33m")
+    elif len(playername) > 24:
+        print("\033[38;2;192;0;0mJe naam mag niet langer dan\n24 karakters zijn!\n\033[38;2;192;192;0m")
         t = 3
         while t != 0:
             print(t)
@@ -1565,11 +1554,11 @@ def startinfo():
         pass
 
     playernamelist.append(playername)
-    print("\033[40;0m" + f"\nHallo {playername}.")
+    print("\033[0m" + f"\nHallo {playername}.")
     
     time.sleep(3)
     clear()
-    print("In dit verhaal ben jij een vluchteling.\n\nDoor meerkeuzevragen te beantwoorden\nen misschien een paar minigames te\nvoltooien, neem je verschillende paden\nnaar verschillende eindes.\n\nEr zijn zes eindes die goed of slecht\nkunnen zijn, dus genoeg verhalen om\nte beleven.\n\nVeel plezier!\n\033[40;33m")
+    print("In dit verhaal ben jij een vluchteling.\n\nDoor meerkeuzevragen te beantwoorden\nen misschien een paar minigames te\nvoltooien, neem je verschillende paden\nnaar verschillende eindes.\n\nEr zijn zes eindes die goed of slecht\nkunnen zijn, dus genoeg verhalen om\nte beleven.\n\nVeel plezier!\n\033[38;2;192;192;0m")
     t = 15
     while t != 0:
         if str(t)[-1] == 0:
@@ -1595,56 +1584,59 @@ def startscreen():
     if spacebarvar.svar == False:
         keyboard.on_press_key("return", lambda _:spacebarvartrue())
         # ⁰¹²³⁴⁵⁶⁷⁸⁹⁻ᵅᵝ·
-        version = "⁰·⁶·¹⁻ᵝ"
-        print("\033[40;36m" + r"   _    __ __              __     __  ")
-        print(r"  | |  / // /__  __ _____ / /_   / /_ ")
-        print(r"  | | / // // / / // ___// __ \ / __/ ")
-        print(r"  | |/ // // /_/ // /__ / / / // /_   ")
-        print(r"  |___//_/ \__,_/ \___//_/ /_/ \__/   ")
-        print(r"   _    __ __              " + "\033[40;33m" + "__ " + "\033[40;36m" + r"__ __   ")
-        print(r"  | |  / // /__  __ ____ _ " + "\033[40;33m" + "\ \\" + "\033[40;36m" + r"\ \\ \  ")
-        print(r"  | | / // // / / // __ `/ " + "\033[40;33m" + " \ \\" + "\033[40;36m" + r"\ \\ \ ")
-        print(r"  | |/ // // /_/ // /_/ /  " + "\033[40;33m" + " / /" + "\033[40;36m" + r"/ // / ")
-        print(r"  |___//_/ \__,_/ \__, /   " + "\033[40;33m" + "/_/" + "\033[40;36m" + r"/_//_/  ")
-        print(r"                 /____/               ")
-        print(" ╔═══════════════════════════════════╗")
-        print(" ║ << DRUK OP ENTER OM TE STARTEN >> ║")
-        print(" ╚═══════════════════════════════════╝")
-        print("\033[40;90m\n\n ᴹⁱᵗᶜʰᵉˡ ᴷˡⁱʲⁿ                 " + version + "\033[40;0m")
+        version = "⁰·⁷·⁰⁻ᵝ"
+        print("\033[0m\033[38;2;0;0;255m              WELKOM BIJ:              ")
+        print("   _    __ __              __     __   ")
+        print("  | |  / // /__  __ _____ / /_   / /_  ")
+        print("  | | / // // / / // ___// __ \ / __/  ")
+        print("  | |/ // // /_/ // /__ / / / // /_    ")
+        print("  |___//_/ \__,_/ \___//_/ /_/ \__/    ")
+        print("   _    __ __              \033[38;2;192;192;0m__ \033[38;2;0;0;255m__ __    ")
+        print("  | |  / // /__  __ ____ _ \033[38;2;192;192;0m\ \\\033[38;2;0;0;255m" + r"\ \\ \   ")
+        print("  | | / // // / / // __ `/ \033[38;2;192;192;0m \ \\\033[38;2;0;0;255m" + r"\ \\ \  ")
+        print("  | |/ // // /_/ // /_/ /  \033[38;2;192;192;0m / /\033[38;2;0;0;255m/ // /  ")
+        print("  |___//_/ \__,_/ \__, /   \033[38;2;192;192;0m/_/\033[38;2;0;0;255m/_//_/   ")
+        print("                 /____/                ")
+        print(" ╔═══════════════════════════════════╗ ")
+        print(" ║ << DRUK OP ENTER OM TE STARTEN >> ║ ")
+        print(" ╚═══════════════════════════════════╝ ")
+        print("\033[38;2;64;64;64m\n ᴹⁱᵗᶜʰᵉˡ ᴷˡⁱʲⁿ                 " + version + " \033[0m")
         time.sleep(0.3)
         clear()
-        print("\033[40;36m" + r"   _    __ __              __     __  ")
-        print(r"  | |  / // /__  __ _____ / /_   / /_ ")
-        print(r"  | | / // // / / // ___// __ \ / __/ ")
-        print(r"  | |/ // // /_/ // /__ / / / // /_   ")
-        print(r"  |___//_/ \__,_/ \___//_/ /_/ \__/   ")
-        print(r"   _    __ __              __ " + "\033[40;33m" + "__ " + "\033[40;36m" + r"__   ")
-        print("  | |  / // /__  __ ____ _ \ \\" + "\033[40;33m" + "\ \\" + "\033[40;36m" + r"\ \  ")
-        print("  | | / // // / / // __ `/  \ \\" + "\033[40;33m" + "\ \\" + "\033[40;36m" + r"\ \ ")
-        print(r"  | |/ // // /_/ // /_/ /   / /" + "\033[40;33m" + "/ /" + "\033[40;36m" + r"/ / ")
-        print(r"  |___//_/ \__,_/ \__, /   /_/" + "\033[40;33m" + "/_/" + "\033[40;36m" + r"/_/  ")
-        print(r"                 /____/               ")
-        print(" ╔═══════════════════════════════════╗")
-        print(" ║\033[40;96m << DRUK OP ENTER OM TE STARTEN >> \033[40;36m║")
-        print(" ╚═══════════════════════════════════╝")
-        print("\033[40;90m\n\n ᴹⁱᵗᶜʰᵉˡ ᴷˡⁱʲⁿ                 " + version + "\033[40;0m")
+        print("\033[0m\033[38;2;0;0;255m              WELKOM BIJ:              ")
+        print("   _    __ __              __     __   ")
+        print("  | |  / // /__  __ _____ / /_   / /_  ")
+        print("  | | / // // / / // ___// __ \ / __/  ")
+        print("  | |/ // // /_/ // /__ / / / // /_    ")
+        print("  |___//_/ \__,_/ \___//_/ /_/ \__/    ")
+        print("   _    __ __              __ \033[38;2;192;192;0m__ \033[38;2;0;0;255m__    ")
+        print("  | |  / // /__  __ ____ _ \ \\\033[38;2;192;192;0m\ \\\033[38;2;0;0;255m\ \   ")
+        print("  | | / // // / / // __ `/  \ \\\033[38;2;192;192;0m\ \\\033[38;2;0;0;255m\ \  ")
+        print("  | |/ // // /_/ // /_/ /   / /\033[38;2;192;192;0m/ /\033[38;2;0;0;255m/ /  ")
+        print("  |___//_/ \__,_/ \__, /   /_/\033[38;2;192;192;0m/_/\033[38;2;0;0;255m/_/   ")
+        print("                 /____/                ")
+        print(" ╔═══════════════════════════════════╗ ")
+        print(" ║\033[38;2;0;192;192m << DRUK OP ENTER OM TE STARTEN >> \033[38;2;0;0;255m║ ")
+        print(" ╚═══════════════════════════════════╝ ")
+        print("\033[38;2;64;64;64m\n ᴹⁱᵗᶜʰᵉˡ ᴷˡⁱʲⁿ                 " + version + " \033[0m")
         time.sleep(0.3)
         clear()
-        print("\033[40;36m" + r"   _    __ __              __     __  ")
-        print(r"  | |  / // /__  __ _____ / /_   / /_ ")
-        print(r"  | | / // // / / // ___// __ \ / __/ ")
-        print(r"  | |/ // // /_/ // /__ / / / // /_   ")
-        print(r"  |___//_/ \__,_/ \___//_/ /_/ \__/   ")
-        print(r"   _    __ __              __ __ " + "\033[40;33m" + "__   ")
-        print("\033[40;36m" + "  | |  / // /__  __ ____ _ \ \\\ \\" + "\033[40;33m" + "\ \  ")
-        print("\033[40;36m" + "  | | / // // / / // __ `/  \ \\\ \\" + "\033[40;33m" + "\ \ ")
-        print("\033[40;36m" + r"  | |/ // // /_/ // /_/ /   / // /" + "\033[40;33m" + "/ / ")
-        print("\033[40;36m" + r"  |___//_/ \__,_/ \__, /   /_//_/" + "\033[40;33m" + "/_/  ")
-        print("\033[40;36m" + r"                 /____/               ")
-        print(" ╔═══════════════════════════════════╗")
-        print(" ║ << DRUK OP ENTER OM TE STARTEN >> ║")
-        print(" ╚═══════════════════════════════════╝")
-        print("\033[40;90m\n\n ᴹⁱᵗᶜʰᵉˡ ᴷˡⁱʲⁿ                 " + version + "\033[40;0m")
+        print("\033[0m\033[38;2;0;0;255m              WELKOM BIJ:              ")
+        print("   _    __ __              __     __   ")
+        print("  | |  / // /__  __ _____ / /_   / /_  ")
+        print("  | | / // // / / // ___// __ \ / __/  ")
+        print("  | |/ // // /_/ // /__ / / / // /_    ")
+        print("  |___//_/ \__,_/ \___//_/ /_/ \__/    ")
+        print("   _    __ __              __ __ \033[38;2;192;192;0m__    ")
+        print("\033[38;2;0;0;255m  | |  / // /__  __ ____ _ \ \\\ \\\033[38;2;192;192;0m\ \   ")
+        print("\033[38;2;0;0;255m  | | / // // / / // __ `/  \ \\\ \\\033[38;2;192;192;0m\ \  ")
+        print("\033[38;2;0;0;255m  | |/ // // /_/ // /_/ /   / // /\033[38;2;192;192;0m/ /  ")
+        print("\033[38;2;0;0;255m  |___//_/ \__,_/ \__, /   /_//_/\033[38;2;192;192;0m/_/   ")
+        print("\033[38;2;0;0;255m                 /____/                ")
+        print(" ╔═══════════════════════════════════╗ ")
+        print(" ║ << DRUK OP ENTER OM TE STARTEN >> ║ ")
+        print(" ╚═══════════════════════════════════╝ ")
+        print("\033[38;2;64;64;64m\n ᴹⁱᵗᶜʰᵉˡ ᴷˡⁱʲⁿ                 " + version + " \033[0m")
         time.sleep(0.3)
         clear()
         startscreen()
