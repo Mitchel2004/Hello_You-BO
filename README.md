@@ -8,6 +8,6 @@
 
 ## Veel plezier!
 ---
-#### Huidige gameversie: 0.7.0-bèta (2021-10-29)
+#### Huidige gameversie: 0.8.0-bèta (2021-10-31)
 ---
 ### Deze textbased applicatie is de BO eindopdracht van periode 1, leerjaar 1 (2021-2022) van het Mediacollege Amsterdam.
