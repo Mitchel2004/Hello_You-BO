@@ -4,6 +4,7 @@ import threading
 import time
 import datetime
 import keyboard
+import random
 from pygame import mixer
 
 ctypes.windll.kernel32.SetConsoleTitleW("Vlucht Vlug")
@@ -53,6 +54,8 @@ inventorylist = []
 housinglist = []
 worklist = []
 
+restaurantitems = ["Rode wijn       ", "Bier       ", "Koffie       ", "Tomatensoep       ", "Salade       ", "Spaghetti       ", "Biefstuk       ", "Eendenborst       ", "Sorbetijs       ", "Cheesecake       "]
+
 class scorenumber:
     score = 0
 
@@ -85,6 +88,431 @@ class stopvar:
     
 def stopvartrue():
     stopvar.svar = True
+
+def end6():
+    stoptimertrue()
+    
+    sec = timenumber.tnum % 60
+    
+    if len(str(sec)) == 1:
+        sec = "0" + str(sec)
+    else:
+        pass
+    
+    secdivide = timenumber.tnum / 60
+    min = int(secdivide // 1)
+    
+    if len(str(min)) == 1:
+        min = "0" + str(min)
+    else:
+        pass
+    
+    if int(min) > 59:
+        newmin = min % 60
+        
+        if len(str(newmin)) == 1:
+            newmin = "0" + str(newmin)
+        else:
+            pass
+        
+        mindivide = min / 60
+        hour = int(mindivide // 1)
+        
+        if len(str(hour)) == 1:
+            hour = "0" + str(hour)
+        else:
+            pass
+        
+        hms = str(hour) + ":" + str(newmin) + ":" + str(sec) + "         "
+    else:
+        hms = str(min) + ":" + str(sec) + "            "
+    
+    answered = str(answerednumber.questionsanswered) + " " * (16 - len(str(answerednumber.questionsanswered)))
+    
+    if len(str(answerednumber.questionsanswered)) > 16:
+        answered = str(answerednumber.questionsanswered)[:15] + "+"
+    else:
+        pass
+    
+    scored = round((86400 - timenumber.tnum) / answerednumber.questionsanswered)
+    
+    scored = str(scored) + " " * (16 - len(str(scored)))
+    
+    if len(str(scorenumber.score)) > 16:
+        scored = str(scorenumber.score)[:15] + "+"
+    else:
+        pass
+    
+    if stopvar.svar == False:
+        keyboard.on_press_key("return", lambda _:stopvartrue())
+        
+        print("\033[38;2;192;0;0mOei " + str(*playernamelist) + "!\n")
+        print("\033[38;2;192;192;0mJe bedrijf is failliet gegaan vanwege\nslechte boekhouding. Je hebt nog\ngenoeg geld om te leven, maar het\nis zwaar.\n")
+        print("■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■")
+        print(f"■             SCORE: {scored} " + "\033[38;2;192;192;0m■")
+        print("■\033[38;2;0;0;255m" + f"    GESPEELDE TIJD: {hms}■")
+        print(f"■ VRAGEN BEANTWOORD: {answered} " + "\033[38;2;192;192;0m■")
+        print("■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■")
+        print("\033[38;2;64;64;64m\nDRUK OP ENTER OM AF TE SLUITEN...")
+        time.sleep(0.5)
+        clear()
+        print("\033[38;2;255;0;0mOei " + str(*playernamelist) + "!\n")
+        print("\033[38;2;192;192;0mJe bedrijf is failliet gegaan vanwege\nslechte boekhouding. Je hebt nog\ngenoeg geld om te leven, maar het\nis zwaar.\n")
+        print("\033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■")
+        print("■\033[38;2;0;0;255m" + f"             SCORE: {scored} ■")
+        print(f"■    GESPEELDE TIJD: {hms}" + "\033[38;2;192;192;0m■")
+        print("■\033[38;2;0;0;255m" + f" VRAGEN BEANTWOORD: {answered} ■")
+        print("■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■")
+        print("\033[38;2;64;64;64m\nDRUK OP ENTER OM AF TE SLUITEN...")
+        time.sleep(0.5)
+        clear()
+        end6()
+    else:
+        print("\033[0m")
+        clear()
+        clearinput = input()
+        clear()
+        os._exit(0)
+
+def end5():
+    stoptimertrue()
+    
+    sec = timenumber.tnum % 60
+    
+    if len(str(sec)) == 1:
+        sec = "0" + str(sec)
+    else:
+        pass
+    
+    secdivide = timenumber.tnum / 60
+    min = int(secdivide // 1)
+    
+    if len(str(min)) == 1:
+        min = "0" + str(min)
+    else:
+        pass
+    
+    if int(min) > 59:
+        newmin = min % 60
+        
+        if len(str(newmin)) == 1:
+            newmin = "0" + str(newmin)
+        else:
+            pass
+        
+        mindivide = min / 60
+        hour = int(mindivide // 1)
+        
+        if len(str(hour)) == 1:
+            hour = "0" + str(hour)
+        else:
+            pass
+        
+        hms = str(hour) + ":" + str(newmin) + ":" + str(sec) + "         "
+    else:
+        hms = str(min) + ":" + str(sec) + "            "
+    
+    answered = str(answerednumber.questionsanswered) + " " * (16 - len(str(answerednumber.questionsanswered)))
+    
+    if len(str(answerednumber.questionsanswered)) > 16:
+        answered = str(answerednumber.questionsanswered)[:15] + "+"
+    else:
+        pass
+    
+    scored = round((86400 - timenumber.tnum) / answerednumber.questionsanswered)
+    
+    scored = str(scored) + " " * (16 - len(str(scored)))
+    
+    if len(str(scorenumber.score)) > 16:
+        scored = str(scorenumber.score)[:15] + "+"
+    else:
+        pass
+    
+    if stopvar.svar == False:
+        keyboard.on_press_key("return", lambda _:stopvartrue())
+        
+        print("\033[38;2;0;192;0mGefeliciteerd " + str(*playernamelist) + "!\n")
+        print("\033[38;2;192;192;0mJe bedrijf is groot geworden en\nje wordt langzaam een miljonair.\nJe hebt een heel hoog inkomen en\ngenoeg geld voor een villa.\n")
+        print("■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■")
+        print(f"■             SCORE: {scored} " + "\033[38;2;192;192;0m■")
+        print("■\033[38;2;0;0;255m" + f"    GESPEELDE TIJD: {hms}■")
+        print(f"■ VRAGEN BEANTWOORD: {answered} " + "\033[38;2;192;192;0m■")
+        print("■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■")
+        print("\033[38;2;64;64;64m\nDRUK OP ENTER OM AF TE SLUITEN...")
+        time.sleep(0.5)
+        clear()
+        print("\033[38;2;0;255;0mGefeliciteerd " + str(*playernamelist) + "!\n")
+        print("\033[38;2;192;192;0mJe bedrijf is groot geworden en\nje wordt langzaam een miljonair.\nJe hebt een heel hoog inkomen en\ngenoeg geld voor een villa.\n")
+        print("\033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■")
+        print("■\033[38;2;0;0;255m" + f"             SCORE: {scored} ■")
+        print(f"■    GESPEELDE TIJD: {hms}" + "\033[38;2;192;192;0m■")
+        print("■\033[38;2;0;0;255m" + f" VRAGEN BEANTWOORD: {answered} ■")
+        print("■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■")
+        print("\033[38;2;64;64;64m\nDRUK OP ENTER OM AF TE SLUITEN...")
+        time.sleep(0.5)
+        clear()
+        end5()
+    else:
+        print("\033[0m")
+        clear()
+        clearinput = input()
+        clear()
+        os._exit(0)
+
+def end4():
+    stoptimertrue()
+    
+    sec = timenumber.tnum % 60
+    
+    if len(str(sec)) == 1:
+        sec = "0" + str(sec)
+    else:
+        pass
+    
+    secdivide = timenumber.tnum / 60
+    min = int(secdivide // 1)
+    
+    if len(str(min)) == 1:
+        min = "0" + str(min)
+    else:
+        pass
+    
+    if int(min) > 59:
+        newmin = min % 60
+        
+        if len(str(newmin)) == 1:
+            newmin = "0" + str(newmin)
+        else:
+            pass
+        
+        mindivide = min / 60
+        hour = int(mindivide // 1)
+        
+        if len(str(hour)) == 1:
+            hour = "0" + str(hour)
+        else:
+            pass
+        
+        hms = str(hour) + ":" + str(newmin) + ":" + str(sec) + "         "
+    else:
+        hms = str(min) + ":" + str(sec) + "            "
+    
+    answered = str(answerednumber.questionsanswered) + " " * (16 - len(str(answerednumber.questionsanswered)))
+    
+    if len(str(answerednumber.questionsanswered)) > 16:
+        answered = str(answerednumber.questionsanswered)[:15] + "+"
+    else:
+        pass
+    
+    scored = round((86400 - timenumber.tnum) / answerednumber.questionsanswered)
+    
+    scored = str(scored) + " " * (16 - len(str(scored)))
+    
+    if len(str(scorenumber.score)) > 16:
+        scored = str(scorenumber.score)[:15] + "+"
+    else:
+        pass
+    
+    if stopvar.svar == False:
+        keyboard.on_press_key("return", lambda _:stopvartrue())
+        
+        print("\033[38;2;192;0;0mOei " + str(*playernamelist) + "!\n")
+        print("\033[38;2;192;192;0mJe hebt geen baan meer en je mag geen\nhuis kopen zonder baan als vluchteling.\nJe bent nu dakloos.\n")
+        print("■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■")
+        print(f"■             SCORE: {scored} " + "\033[38;2;192;192;0m■")
+        print("■\033[38;2;0;0;255m" + f"    GESPEELDE TIJD: {hms}■")
+        print(f"■ VRAGEN BEANTWOORD: {answered} " + "\033[38;2;192;192;0m■")
+        print("■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■")
+        print("\033[38;2;64;64;64m\nDRUK OP ENTER OM AF TE SLUITEN...")
+        time.sleep(0.5)
+        clear()
+        print("\033[38;2;255;0;0mOei " + str(*playernamelist) + "!\n")
+        print("\033[38;2;192;192;0mJe hebt geen baan meer en je mag geen\nhuis kopen zonder baan als vluchteling.\nJe bent nu dakloos.\n")
+        print("\033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■")
+        print("■\033[38;2;0;0;255m" + f"             SCORE: {scored} ■")
+        print(f"■    GESPEELDE TIJD: {hms}" + "\033[38;2;192;192;0m■")
+        print("■\033[38;2;0;0;255m" + f" VRAGEN BEANTWOORD: {answered} ■")
+        print("■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■")
+        print("\033[38;2;64;64;64m\nDRUK OP ENTER OM AF TE SLUITEN...")
+        time.sleep(0.5)
+        clear()
+        end4()
+    else:
+        print("\033[0m")
+        clear()
+        clearinput = input()
+        clear()
+        os._exit(0)
+
+def end3():
+    stoptimertrue()
+    
+    sec = timenumber.tnum % 60
+    
+    if len(str(sec)) == 1:
+        sec = "0" + str(sec)
+    else:
+        pass
+    
+    secdivide = timenumber.tnum / 60
+    min = int(secdivide // 1)
+    
+    if len(str(min)) == 1:
+        min = "0" + str(min)
+    else:
+        pass
+    
+    if int(min) > 59:
+        newmin = min % 60
+        
+        if len(str(newmin)) == 1:
+            newmin = "0" + str(newmin)
+        else:
+            pass
+        
+        mindivide = min / 60
+        hour = int(mindivide // 1)
+        
+        if len(str(hour)) == 1:
+            hour = "0" + str(hour)
+        else:
+            pass
+        
+        hms = str(hour) + ":" + str(newmin) + ":" + str(sec) + "         "
+    else:
+        hms = str(min) + ":" + str(sec) + "            "
+    
+    answered = str(answerednumber.questionsanswered) + " " * (16 - len(str(answerednumber.questionsanswered)))
+    
+    if len(str(answerednumber.questionsanswered)) > 16:
+        answered = str(answerednumber.questionsanswered)[:15] + "+"
+    else:
+        pass
+    
+    scored = round((86400 - timenumber.tnum) / answerednumber.questionsanswered)
+    
+    scored = str(scored) + " " * (16 - len(str(scored)))
+    
+    if len(str(scorenumber.score)) > 16:
+        scored = str(scorenumber.score)[:15] + "+"
+    else:
+        pass
+    
+    if stopvar.svar == False:
+        keyboard.on_press_key("return", lambda _:stopvartrue())
+        
+        print("\033[38;2;192;0;0mOei " + str(*playernamelist) + "!\n")
+        print("\033[38;2;192;192;0mJe bent gepakt en krijgt een\nlevenslange gevangenisstraf wegens\ndrugsgebruik en het stelen van geld\nuit de kassa.\n")
+        print("■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■")
+        print(f"■             SCORE: {scored} " + "\033[38;2;192;192;0m■")
+        print("■\033[38;2;0;0;255m" + f"    GESPEELDE TIJD: {hms}■")
+        print(f"■ VRAGEN BEANTWOORD: {answered} " + "\033[38;2;192;192;0m■")
+        print("■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■")
+        print("\033[38;2;64;64;64m\nDRUK OP ENTER OM AF TE SLUITEN...")
+        time.sleep(0.5)
+        clear()
+        print("\033[38;2;255;0;0mOei " + str(*playernamelist) + "!\n")
+        print("\033[38;2;192;192;0mJe bent gepakt en krijgt een\nlevenslange gevangenisstraf wegens\ndrugsgebruik en het stelen van geld\nuit de kassa.\n")
+        print("\033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■")
+        print("■\033[38;2;0;0;255m" + f"             SCORE: {scored} ■")
+        print(f"■    GESPEELDE TIJD: {hms}" + "\033[38;2;192;192;0m■")
+        print("■\033[38;2;0;0;255m" + f" VRAGEN BEANTWOORD: {answered} ■")
+        print("■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■")
+        print("\033[38;2;64;64;64m\nDRUK OP ENTER OM AF TE SLUITEN...")
+        time.sleep(0.5)
+        clear()
+        end3()
+    else:
+        print("\033[0m")
+        clear()
+        clearinput = input()
+        clear()
+        os._exit(0)
+
+def end2():
+    stoptimertrue()
+    
+    sec = timenumber.tnum % 60
+    
+    if len(str(sec)) == 1:
+        sec = "0" + str(sec)
+    else:
+        pass
+    
+    secdivide = timenumber.tnum / 60
+    min = int(secdivide // 1)
+    
+    if len(str(min)) == 1:
+        min = "0" + str(min)
+    else:
+        pass
+    
+    if int(min) > 59:
+        newmin = min % 60
+        
+        if len(str(newmin)) == 1:
+            newmin = "0" + str(newmin)
+        else:
+            pass
+        
+        mindivide = min / 60
+        hour = int(mindivide // 1)
+        
+        if len(str(hour)) == 1:
+            hour = "0" + str(hour)
+        else:
+            pass
+        
+        hms = str(hour) + ":" + str(newmin) + ":" + str(sec) + "         "
+    else:
+        hms = str(min) + ":" + str(sec) + "            "
+    
+    answered = str(answerednumber.questionsanswered) + " " * (16 - len(str(answerednumber.questionsanswered)))
+    
+    if len(str(answerednumber.questionsanswered)) > 16:
+        answered = str(answerednumber.questionsanswered)[:15] + "+"
+    else:
+        pass
+    
+    scored = round((86400 - timenumber.tnum) / answerednumber.questionsanswered)
+    
+    scored = str(scored) + " " * (16 - len(str(scored)))
+    
+    if len(str(scorenumber.score)) > 16:
+        scored = str(scorenumber.score)[:15] + "+"
+    else:
+        pass
+    
+    if stopvar.svar == False:
+        keyboard.on_press_key("return", lambda _:stopvartrue())
+        
+        print("\033[38;2;0;192;0mGefeliciteerd " + str(*playernamelist) + "!\n")
+        print("\033[38;2;192;192;0mJe hebt een hoog inkomen en\ngenoeg geld voor een groot huis.\n\nJe bent geen vluchteling, maar een\nvrij rijke burger.\n")
+        print("■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■")
+        print(f"■             SCORE: {scored} " + "\033[38;2;192;192;0m■")
+        print("■\033[38;2;0;0;255m" + f"    GESPEELDE TIJD: {hms}■")
+        print(f"■ VRAGEN BEANTWOORD: {answered} " + "\033[38;2;192;192;0m■")
+        print("■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■")
+        print("\033[38;2;64;64;64m\nDRUK OP ENTER OM AF TE SLUITEN...")
+        time.sleep(0.5)
+        clear()
+        print("\033[38;2;0;255;0mGefeliciteerd " + str(*playernamelist) + "!\n")
+        print("\033[38;2;192;192;0mJe hebt een hoog inkomen en\ngenoeg geld voor een groot huis.\n\nJe bent geen vluchteling, maar een\nvrij rijke burger.\n")
+        print("\033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■")
+        print("■\033[38;2;0;0;255m" + f"             SCORE: {scored} ■")
+        print(f"■    GESPEELDE TIJD: {hms}" + "\033[38;2;192;192;0m■")
+        print("■\033[38;2;0;0;255m" + f" VRAGEN BEANTWOORD: {answered} ■")
+        print("■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■ \033[38;2;0;0;255m■ \033[38;2;192;192;0m■")
+        print("\033[38;2;64;64;64m\nDRUK OP ENTER OM AF TE SLUITEN...")
+        time.sleep(0.5)
+        clear()
+        end2()
+    else:
+        print("\033[0m")
+        clear()
+        clearinput = input()
+        clear()
+        os._exit(0)
 
 def end1():
     stoptimertrue()
@@ -124,17 +552,19 @@ def end1():
     else:
         hms = str(min) + ":" + str(sec) + "            "
     
-    scored = str(scorenumber.score) + " " * (16 - len(str(scorenumber.score)))
-    
-    if len(str(scorenumber.score)) > 16:
-        scored = str(scorenumber.score)[:15] + "+"
-    else:
-        pass
-    
     answered = str(answerednumber.questionsanswered) + " " * (16 - len(str(answerednumber.questionsanswered)))
     
     if len(str(answerednumber.questionsanswered)) > 16:
-        answered = str(answerednumber.questionsanswered) + "+"
+        answered = str(answerednumber.questionsanswered)[:15] + "+"
+    else:
+        pass
+    
+    scored = round((86400 - timenumber.tnum) / answerednumber.questionsanswered)
+    
+    scored = str(scored) + " " * (16 - len(str(scored)))
+    
+    if len(str(scorenumber.score)) > 16:
+        scored = str(scorenumber.score)[:15] + "+"
     else:
         pass
     
@@ -176,32 +606,20 @@ def question21():
     print("Woning: " + str(*housinglist))
     print("Werk: " + str(*worklist))
     print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
-    print(".")
+    print("Omdat je drugs heb gebruikt, heb je\nonbewust een lot van de loterij\ngekocht.\nGa je de uitslag bekijken?")
     print("───────────────────────────────────────")
-    print("A    .")
-    print("B    .")
-    print("C    .")
+    print("A    Ja")
+    print("B    Nee")
     answer = input("> \033[38;2;0;128;128m")
     answerup = answer.upper()
     if answerup == "A":
         clear()
-        #question
+        end2()
     elif answerup == "B":
         clear()
-        print("\033[38;2;255;0;0mJe kon het niet winnen.\n\033[38;2;192;192;0m")
-        t = 5
-        while t != 0:
-            print(t)
-            time.sleep(1)
-            t -= 1
-            print("\033[A\033[A")
-        clear()
-        question1()
-    elif answerup == "C":
-        clear()
-        #question
+        end1()
     else:
-        print("\033[38;2;192;0;0mTyp alleen de letters A, B of C!\n\033[38;2;192;192;0m")
+        print("\033[38;2;192;0;0mTyp alleen de letters A of B!\n\033[38;2;192;192;0m")
         t = 3
         while t != 0:
             print(t)
@@ -218,32 +636,20 @@ def question20():
     print("Woning: " + str(*housinglist))
     print("Werk: " + str(*worklist))
     print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
-    print(".")
+    print("Er word je nog meer aangeboden.\nNeem je het aan?")
     print("───────────────────────────────────────")
-    print("A    .")
-    print("B    .")
-    print("C    .")
+    print("A    Ja")
+    print("B    Nee")
     answer = input("> \033[38;2;0;128;128m")
     answerup = answer.upper()
     if answerup == "A":
         clear()
-        #question
+        end3()
     elif answerup == "B":
         clear()
-        print("\033[38;2;255;0;0mJe kon het niet winnen.\n\033[38;2;192;192;0m")
-        t = 5
-        while t != 0:
-            print(t)
-            time.sleep(1)
-            t -= 1
-            print("\033[A\033[A")
-        clear()
-        question1()
-    elif answerup == "C":
-        clear()
-        #question
+        question21()
     else:
-        print("\033[38;2;192;0;0mTyp alleen de letters A, B of C!\n\033[38;2;192;192;0m")
+        print("\033[38;2;192;0;0mTyp alleen de letters A of B!\n\033[38;2;192;192;0m")
         t = 3
         while t != 0:
             print(t)
@@ -253,47 +659,143 @@ def question20():
         clear()
         question20()
 
-def question19():
-    answerednumber.questionsanswered += 1
-    print("\033[0mNaam: " + str(*playernamelist))
-    print("Rugzak: " + str(*inventorylist))
-    print("Woning: " + str(*housinglist))
-    print("Werk: " + str(*worklist))
-    print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
-    print(".")
-    print("───────────────────────────────────────")
-    print("A    .")
-    print("B    .")
-    print("C    .")
-    answer = input("> \033[38;2;0;128;128m")
-    answerup = answer.upper()
-    if answerup == "A":
+class othernewquestionstartvar:
+    onqsvar = False
+    
+def othernewquestionstartvartrue():
+    othernewquestionstartvar.onqsvar = True
+
+def otherquestion19():
+    if othernewquestionstartvar.onqsvar == False:
+        keyboard.on_press_key("return", lambda _:othernewquestionstartvartrue())
+        
+        print("\033[0mNaam: " + str(*playernamelist))
+        print("Rugzak: " + str(*inventorylist))
+        print("Woning: " + str(*housinglist))
+        print("Werk: " + str(*worklist))
+        print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
+        print("Je hebt helaas niet alles onthouden\nen je krijgt een waarschuwing van\nje baas. Na drie waarschuwingen\nword je ontslagen.\nProbeer het opnieuw.")
+        print("───────────────────────────────────────")
+        print("Druk op Enter om te starten...")
+        time.sleep(1)
         clear()
-        #question
-    elif answerup == "B":
-        clear()
-        print("\033[38;2;255;0;0mJe kon het niet winnen.\n\033[38;2;192;192;0m")
-        t = 5
-        while t != 0:
-            print(t)
-            time.sleep(1)
-            t -= 1
-            print("\033[A\033[A")
-        clear()
-        question1()
-    elif answerup == "C":
-        clear()
-        #question
+        otherquestion19()
     else:
-        print("\033[38;2;192;0;0mTyp alleen de letters A, B of C!\n\033[38;2;192;192;0m")
-        t = 3
-        while t != 0:
-            print(t)
+        random.shuffle(restaurantitems)
+        print("\033[0mNaam: " + str(*playernamelist))
+        print("Rugzak: " + str(*inventorylist))
+        print("Woning: " + str(*housinglist))
+        print("Werk: " + str(*worklist))
+        print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
+        print("Je hebt helaas niet alles onthouden\nen je krijgt een waarschuwing van\nje baas. Na drie waarschuwingen\nword je ontslagen.\nProbeer het opnieuw.")
+        print("───────────────────────────────────────")
+        time.sleep(0.5)
+        i = 0
+        while i != 3:
+            print(restaurantitems[i])
             time.sleep(1)
-            t -= 1
+            i += 1
             print("\033[A\033[A")
+        print("Wat wilde de klanten hebben?")
+        clearinput = input()
+        print("\033[A\033[A")
+        item1 = input("1> \n2> \n3> \033[A\033[A\033[38;2;0;128;128m")
+        item2 = input("\033[0m2> \033[38;2;0;128;128m")
+        item3 = input("\033[0m3> \033[38;2;0;128;128m")
+        itemcap1 = item1.capitalize()
+        itemcap2 = item2.capitalize()
+        itemcap3 = item3.capitalize()
+        if itemcap1 + "       " == restaurantitems[0] and itemcap2 + "       " == restaurantitems[1] and itemcap3 + "       " == restaurantitems[2]:
+            print("\033[38;2;0;192;0mGoed gedaan!\n\033[38;2;192;192;0m")
+            t = 3
+            while t != 0:
+                print(t)
+                time.sleep(1)
+                t -= 1
+                print("\033[A\033[A")
+            answerednumber.questionsanswered += 1
+            clear()
+            end2()
+        else:
+            print("\033[38;2;255;0;0mJe had helaas niet alles goed.\n\033[38;2;192;192;0m")
+            t = 3
+            while t != 0:
+                print(t)
+                time.sleep(1)
+                t -= 1
+                print("\033[A\033[A")
+            answerednumber.questionsanswered += 1
+            clear()
+            end4()
+
+class newquestionstartvar:
+    nqsvar = False
+    
+def newquestionstartvartrue():
+    newquestionstartvar.nqsvar = True
+
+def question19():
+    if newquestionstartvar.nqsvar == False:
+        keyboard.on_press_key("return", lambda _:newquestionstartvartrue())
+        
+        print("\033[0mNaam: " + str(*playernamelist))
+        print("Rugzak: " + str(*inventorylist))
+        print("Woning: " + str(*housinglist))
+        print("Werk: " + str(*worklist))
+        print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
+        print("Je hebt helaas niet alles onthouden\nen je krijgt een waarschuwing van\nje baas. Na drie waarschuwingen\nword je ontslagen.\nProbeer het opnieuw.")
+        print("───────────────────────────────────────")
+        print("Druk op Enter om te starten...")
+        time.sleep(1)
         clear()
         question19()
+    else:
+        random.shuffle(restaurantitems)
+        print("\033[0mNaam: " + str(*playernamelist))
+        print("Rugzak: " + str(*inventorylist))
+        print("Woning: " + str(*housinglist))
+        print("Werk: " + str(*worklist))
+        print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
+        print("Je hebt helaas niet alles onthouden\nen je krijgt een waarschuwing van\nje baas. Na drie waarschuwingen\nword je ontslagen.\nProbeer het opnieuw.")
+        print("───────────────────────────────────────")
+        time.sleep(0.5)
+        i = 0
+        while i != 3:
+            print(restaurantitems[i])
+            time.sleep(1)
+            i += 1
+            print("\033[A\033[A")
+        print("Wat wilde de klanten hebben?")
+        clearinput = input()
+        print("\033[A\033[A")
+        item1 = input("1> \n2> \n3> \033[A\033[A\033[38;2;0;128;128m")
+        item2 = input("\033[0m2> \033[38;2;0;128;128m")
+        item3 = input("\033[0m3> \033[38;2;0;128;128m")
+        itemcap1 = item1.capitalize()
+        itemcap2 = item2.capitalize()
+        itemcap3 = item3.capitalize()
+        if itemcap1 + "       " == restaurantitems[0] and itemcap2 + "       " == restaurantitems[1] and itemcap3 + "       " == restaurantitems[2]:
+            print("\033[38;2;0;192;0mGoed gedaan!\n\033[38;2;192;192;0m")
+            t = 3
+            while t != 0:
+                print(t)
+                time.sleep(1)
+                t -= 1
+                print("\033[A\033[A")
+            answerednumber.questionsanswered += 1
+            clear()
+            end2()
+        else:
+            print("\033[38;2;255;0;0mJe had helaas niet alles goed.\n\033[38;2;192;192;0m")
+            t = 3
+            while t != 0:
+                print(t)
+                time.sleep(1)
+                t -= 1
+                print("\033[A\033[A")
+            answerednumber.questionsanswered += 1
+            clear()
+            otherquestion19()
 
 def question18():
     answerednumber.questionsanswered += 1
@@ -302,32 +804,24 @@ def question18():
     print("Woning: " + str(*housinglist))
     print("Werk: " + str(*worklist))
     print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
-    print(".")
+    print("Je moet voor je eigen bedrijf je eigen\nboekhouding doen.\nLos de volgende sommen op:")
     print("───────────────────────────────────────")
-    print("A    .")
-    print("B    .")
-    print("C    .")
-    answer = input("> \033[38;2;0;128;128m")
-    answerup = answer.upper()
-    if answerup == "A":
-        clear()
-        #question
-    elif answerup == "B":
-        clear()
-        print("\033[38;2;255;0;0mJe kon het niet winnen.\n\033[38;2;192;192;0m")
-        t = 5
+    answer1 = input("        7 × 8 = \n    666 − 597 = \n48 ÷ 2(3 + 9) = \033[A\033[A\033[38;2;0;128;128m")
+    answer2 = input("\033[0m    666 − 597 = \033[38;2;0;128;128m")
+    answer3 = input("\033[0m48 ÷ 2(3 + 9) = \033[38;2;0;128;128m")
+    if answer1 == "56" and answer2 == "69" and answer3 == "288":
+        print("\033[38;2;0;192;0mGoed gedaan!\n\033[38;2;192;192;0m")
+        t = 3
         while t != 0:
             print(t)
             time.sleep(1)
             t -= 1
             print("\033[A\033[A")
+        answerednumber.questionsanswered += 1
         clear()
-        question1()
-    elif answerup == "C":
-        clear()
-        #question
+        end5()
     else:
-        print("\033[38;2;192;0;0mTyp alleen de letters A, B of C!\n\033[38;2;192;192;0m")
+        print("\033[38;2;255;0;0mJe had helaas niet alles goed.\n\033[38;2;192;192;0m")
         t = 3
         while t != 0:
             print(t)
@@ -335,7 +829,7 @@ def question18():
             t -= 1
             print("\033[A\033[A")
         clear()
-        question18()
+        end6()
 
 def question17():
     answerednumber.questionsanswered += 1
@@ -344,32 +838,20 @@ def question17():
     print("Woning: " + str(*housinglist))
     print("Werk: " + str(*worklist))
     print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
-    print(".")
+    print("Je baan komt waarschijnlijk te\nvervallen, maar je krijgt een kans om\nschoonmaker te worden.\nGa je akkoord?")
     print("───────────────────────────────────────")
-    print("A    .")
-    print("B    .")
-    print("C    .")
+    print("A    Ja")
+    print("B    Nee")
     answer = input("> \033[38;2;0;128;128m")
     answerup = answer.upper()
     if answerup == "A":
         clear()
-        #question
+        end1()
     elif answerup == "B":
         clear()
-        print("\033[38;2;255;0;0mJe kon het niet winnen.\n\033[38;2;192;192;0m")
-        t = 5
-        while t != 0:
-            print(t)
-            time.sleep(1)
-            t -= 1
-            print("\033[A\033[A")
-        clear()
-        question1()
-    elif answerup == "C":
-        clear()
-        #question
+        end4()
     else:
-        print("\033[38;2;192;0;0mTyp alleen de letters A, B of C!\n\033[38;2;192;192;0m")
+        print("\033[38;2;192;0;0mTyp alleen de letters A of B!\n\033[38;2;192;192;0m")
         t = 3
         while t != 0:
             print(t)
@@ -386,19 +868,24 @@ def question16():
     print("Woning: " + str(*housinglist))
     print("Werk: " + str(*worklist))
     print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
-    print(".")
+    print("Je gebruikt het geld uit de kassa.\nHoeveel koop je?")
     print("───────────────────────────────────────")
-    print("A    .")
-    print("B    .")
-    print("C    .")
+    print("A    Weinig")
+    print("B    Iets meer")
+    print("C    Veel")
     answer = input("> \033[38;2;0;128;128m")
     answerup = answer.upper()
     if answerup == "A":
         clear()
-        #question
+        end1()
     elif answerup == "B":
         clear()
-        print("\033[38;2;255;0;0mJe kon het niet winnen.\n\033[38;2;192;192;0m")
+        question20()
+    elif answerup == "C":
+        housinglist.pop(0)
+        worklist.pop(0)
+        clear()
+        print("\033[38;2;255;0;0mJe wordt terug naar je oude\nland gestuurd omdat je gepakt was\nmet veel drugs.\n\033[38;2;192;192;0m")
         t = 5
         while t != 0:
             print(t)
@@ -406,10 +893,7 @@ def question16():
             t -= 1
             print("\033[A\033[A")
         clear()
-        question1()
-    elif answerup == "C":
-        clear()
-        #question
+        question4()
     else:
         print("\033[38;2;192;0;0mTyp alleen de letters A, B of C!\n\033[38;2;192;192;0m")
         t = 3
@@ -421,47 +905,74 @@ def question16():
         clear()
         question16()
 
+class questionstartvar:
+    qsvar = False
+    
+def questionstartvartrue():
+    questionstartvar.qsvar = True
+
 def question15():
-    answerednumber.questionsanswered += 1
-    print("\033[0mNaam: " + str(*playernamelist))
-    print("Rugzak: " + str(*inventorylist))
-    print("Woning: " + str(*housinglist))
-    print("Werk: " + str(*worklist))
-    print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
-    print(".")
-    print("───────────────────────────────────────")
-    print("A    .")
-    print("B    .")
-    print("C    .")
-    answer = input("> \033[38;2;0;128;128m")
-    answerup = answer.upper()
-    if answerup == "A":
-        clear()
-        #question
-    elif answerup == "B":
-        clear()
-        print("\033[38;2;255;0;0mJe kon het niet winnen.\n\033[38;2;192;192;0m")
-        t = 5
-        while t != 0:
-            print(t)
-            time.sleep(1)
-            t -= 1
-            print("\033[A\033[A")
-        clear()
-        question1()
-    elif answerup == "C":
-        clear()
-        #question
-    else:
-        print("\033[38;2;192;0;0mTyp alleen de letters A, B of C!\n\033[38;2;192;192;0m")
-        t = 3
-        while t != 0:
-            print(t)
-            time.sleep(1)
-            t -= 1
-            print("\033[A\033[A")
+    if questionstartvar.qsvar == False:
+        keyboard.on_press_key("return", lambda _:questionstartvartrue())
+        
+        print("\033[0mNaam: " + str(*playernamelist))
+        print("Rugzak: " + str(*inventorylist))
+        print("Woning: " + str(*housinglist))
+        print("Werk: " + str(*worklist))
+        print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
+        print("Je bent aangenomen en kan meteen\nbeginnen. Een paar klanten vertellen\nwat ze willen hebben.\nJij moet onthouden wat ze willen.")
+        print("───────────────────────────────────────")
+        print("Druk op Enter om te starten...")
+        time.sleep(1)
         clear()
         question15()
+    else:
+        random.shuffle(restaurantitems)
+        print("\033[0mNaam: " + str(*playernamelist))
+        print("Rugzak: " + str(*inventorylist))
+        print("Woning: " + str(*housinglist))
+        print("Werk: " + str(*worklist))
+        print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
+        print("Je bent aangenomen en kan meteen\nbeginnen. Een paar klanten vertellen\nwat ze willen hebben.\nJij moet onthouden wat ze willen.")
+        print("───────────────────────────────────────")
+        time.sleep(0.5)
+        i = 0
+        while i != 3:
+            print(restaurantitems[i])
+            time.sleep(1)
+            i += 1
+            print("\033[A\033[A")
+        print("Wat wilde de klanten hebben?")
+        clearinput = input()
+        print("\033[A\033[A")
+        item1 = input("1> \n2> \n3> \033[A\033[A\033[38;2;0;128;128m")
+        item2 = input("\033[0m2> \033[38;2;0;128;128m")
+        item3 = input("\033[0m3> \033[38;2;0;128;128m")
+        itemcap1 = item1.capitalize()
+        itemcap2 = item2.capitalize()
+        itemcap3 = item3.capitalize()
+        if itemcap1 + "       " == restaurantitems[0] and itemcap2 + "       " == restaurantitems[1] and itemcap3 + "       " == restaurantitems[2]:
+            print("\033[38;2;0;192;0mGoed gedaan!\n\033[38;2;192;192;0m")
+            t = 3
+            while t != 0:
+                print(t)
+                time.sleep(1)
+                t -= 1
+                print("\033[A\033[A")
+            answerednumber.questionsanswered += 1
+            clear()
+            end2()
+        else:
+            print("\033[38;2;255;0;0mJe had helaas niet alles goed.\n\033[38;2;192;192;0m")
+            t = 3
+            while t != 0:
+                print(t)
+                time.sleep(1)
+                t -= 1
+                print("\033[A\033[A")
+            answerednumber.questionsanswered += 1
+            clear()
+            question19()
 
 def question14():
     answerednumber.questionsanswered += 1
@@ -470,19 +981,17 @@ def question14():
     print("Woning: " + str(*housinglist))
     print("Werk: " + str(*worklist))
     print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
-    print(".")
+    print("Je bent een klein bedrijf gestart,\nmaar je krijgt te horen dat een\nfamilielid nog in het land zit waar\nje van vluchtte.\nWat nu?")
     print("───────────────────────────────────────")
-    print("A    .")
-    print("B    .")
-    print("C    .")
+    print("A    Ga het familielid halen")
+    print("B    Focus op je eigen bedrijf")
     answer = input("> \033[38;2;0;128;128m")
     answerup = answer.upper()
     if answerup == "A":
+        housinglist.pop(0)
+        worklist.pop(0)
         clear()
-        #question
-    elif answerup == "B":
-        clear()
-        print("\033[38;2;255;0;0mJe kon het niet winnen.\n\033[38;2;192;192;0m")
+        print("\033[38;2;255;0;0mHet lukt om bij je familielid te komen,\nmaar nu ben je alles weer kwijt.\n\033[38;2;192;192;0m")
         t = 5
         while t != 0:
             print(t)
@@ -490,12 +999,12 @@ def question14():
             t -= 1
             print("\033[A\033[A")
         clear()
-        question1()
-    elif answerup == "C":
+        question4()
+    elif answerup == "B":
         clear()
-        #question
+        question18()
     else:
-        print("\033[38;2;192;0;0mTyp alleen de letters A, B of C!\n\033[38;2;192;192;0m")
+        print("\033[38;2;192;0;0mTyp alleen de letters A of B!\n\033[38;2;192;192;0m")
         t = 3
         while t != 0:
             print(t)
@@ -512,32 +1021,20 @@ def question13():
     print("Woning: " + str(*housinglist))
     print("Werk: " + str(*worklist))
     print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
-    print(".")
+    print("De man werd gepakt, en omdat jij\nde politie had gebeld krijg je een\nloonsverhoging. Je hebt nu genoeg geld\nvoor je eigen huis.\nWat nu?")
     print("───────────────────────────────────────")
-    print("A    .")
-    print("B    .")
-    print("C    .")
+    print("A    Koop een huis")
+    print("B    Blijf doorsparen")
     answer = input("> \033[38;2;0;128;128m")
     answerup = answer.upper()
     if answerup == "A":
         clear()
-        #question
+        end1()
     elif answerup == "B":
         clear()
-        print("\033[38;2;255;0;0mJe kon het niet winnen.\n\033[38;2;192;192;0m")
-        t = 5
-        while t != 0:
-            print(t)
-            time.sleep(1)
-            t -= 1
-            print("\033[A\033[A")
-        clear()
-        question1()
-    elif answerup == "C":
-        clear()
-        #question
+        question17()
     else:
-        print("\033[38;2;192;0;0mTyp alleen de letters A, B of C!\n\033[38;2;192;192;0m")
+        print("\033[38;2;192;0;0mTyp alleen de letters A of B!\n\033[38;2;192;192;0m")
         t = 3
         while t != 0:
             print(t)
@@ -554,32 +1051,20 @@ def question12():
     print("Woning: " + str(*housinglist))
     print("Werk: " + str(*worklist))
     print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
-    print(".")
+    print("Het werk begint saai te worden, maar\nop een dag bied een vreemde man\nje drugs aan.\nNeem je het aan?")
     print("───────────────────────────────────────")
-    print("A    .")
-    print("B    .")
-    print("C    .")
+    print("A    Ja")
+    print("B    Nee")
     answer = input("> \033[38;2;0;128;128m")
     answerup = answer.upper()
     if answerup == "A":
         clear()
-        #question
+        question16()
     elif answerup == "B":
         clear()
-        print("\033[38;2;255;0;0mJe kon het niet winnen.\n\033[38;2;192;192;0m")
-        t = 5
-        while t != 0:
-            print(t)
-            time.sleep(1)
-            t -= 1
-            print("\033[A\033[A")
-        clear()
-        question1()
-    elif answerup == "C":
-        clear()
-        #question
+        question17()
     else:
-        print("\033[38;2;192;0;0mTyp alleen de letters A, B of C!\n\033[38;2;192;192;0m")
+        print("\033[38;2;192;0;0mTyp alleen de letters A of B!\n\033[38;2;192;192;0m")
         t = 3
         while t != 0:
             print(t)
@@ -596,32 +1081,20 @@ def question11():
     print("Woning: " + str(*housinglist))
     print("Werk: " + str(*worklist))
     print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
-    print(".")
+    print("Je doet je werk zó goed, dat een\ngroot duur restaurant je een baan\naanbied.\nNeem je het aan?")
     print("───────────────────────────────────────")
-    print("A    .")
-    print("B    .")
-    print("C    .")
+    print("A    Ja")
+    print("B    Nee")
     answer = input("> \033[38;2;0;128;128m")
     answerup = answer.upper()
     if answerup == "A":
         clear()
-        #question
+        question15()
     elif answerup == "B":
         clear()
-        print("\033[38;2;255;0;0mJe kon het niet winnen.\n\033[38;2;192;192;0m")
-        t = 5
-        while t != 0:
-            print(t)
-            time.sleep(1)
-            t -= 1
-            print("\033[A\033[A")
-        clear()
-        question1()
-    elif answerup == "C":
-        clear()
-        #question
+        question12()
     else:
-        print("\033[38;2;192;0;0mTyp alleen de letters A, B of C!\n\033[38;2;192;192;0m")
+        print("\033[38;2;192;0;0mTyp alleen de letters A of B!\n\033[38;2;192;192;0m")
         t = 3
         while t != 0:
             print(t)
@@ -645,6 +1118,7 @@ def question10():
     answer = input("> \033[38;2;0;128;128m")
     answerup = answer.upper()
     if answerup == "A":
+        worklist.append("Eigen bedrijf")
         clear()
         question14()
     elif answerup == "B":
@@ -747,6 +1221,7 @@ def question7():
         clear()
         question9()
     elif answerup == "B":
+        inventorylist.pop(0)
         clear()
         print("\033[38;2;255;0;0mJe wordt gepakt en krijgt\neen gevangenisstraf.\nWacht 30 seconden.\n\033[38;2;192;192;0m")
         t = 5
@@ -1692,7 +2167,7 @@ def startinfo():
     time.sleep(3)
     clear()
     print("In dit verhaal ben jij een vluchteling.\n\nDoor meerkeuzevragen te beantwoorden\nen misschien een paar minigames te\nvoltooien, neem je verschillende paden\nnaar verschillende eindes.\n\nEr zijn zes eindes die goed of slecht\nkunnen zijn, dus genoeg verhalen om\nte beleven.\n\nVeel plezier!\n\033[38;2;192;192;0m")
-    t = 1
+    t = 15
     while t != 0:
         if str(t)[-1] == 0:
             print(str(t)[0])
@@ -1783,7 +2258,7 @@ def startscreen():
         clearinput = input()
         startinfo()
     
-#startmusic("Sneaky Snitch - Kevin MacLeod.mp3")
+startmusic("Sneaky Snitch - Kevin MacLeod.mp3")
 startscreen()
 
 # Muziek:
