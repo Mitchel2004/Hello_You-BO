@@ -2197,7 +2197,7 @@ def startscreen():
     if entervar.evar == False:
         keyboard.on_press_key("return", lambda _:entervartrue())
         # ⁰¹²³⁴⁵⁶⁷⁸⁹⁻ᵅᵝ·
-        version = "⁰·⁸·⁰⁻ᵝ"
+        version = "¹·⁰·⁰"
         print("\033[0m\033[38;2;0;0;255m              WELKOM BIJ:              ")
         print("   _    __ __              __     __   ")
         print("  | |  / // /__  __ _____ / /_   / /_  ")
@@ -2213,7 +2213,7 @@ def startscreen():
         print(" ╔═══════════════════════════════════╗ ")
         print(" ║ << DRUK OP ENTER OM TE STARTEN >> ║ ")
         print(" ╚═══════════════════════════════════╝ ")
-        print("\033[38;2;64;64;64m\n ᴹⁱᵗᶜʰᵉˡ ᴷˡⁱʲⁿ                 " + version + " \033[0m")
+        print("\033[38;2;64;64;64m\n ᴹⁱᵗᶜʰᵉˡ ᴷˡⁱʲⁿ                   " + version + " \033[0m")
         time.sleep(0.3)
         clear()
         print("\033[0m\033[38;2;0;0;255m              WELKOM BIJ:              ")
@@ -2231,7 +2231,7 @@ def startscreen():
         print(" ╔═══════════════════════════════════╗ ")
         print(" ║\033[38;2;0;192;192m << DRUK OP ENTER OM TE STARTEN >> \033[38;2;0;0;255m║ ")
         print(" ╚═══════════════════════════════════╝ ")
-        print("\033[38;2;64;64;64m\n ᴹⁱᵗᶜʰᵉˡ ᴷˡⁱʲⁿ                 " + version + " \033[0m")
+        print("\033[38;2;64;64;64m\n ᴹⁱᵗᶜʰᵉˡ ᴷˡⁱʲⁿ                   " + version + " \033[0m")
         time.sleep(0.3)
         clear()
         print("\033[0m\033[38;2;0;0;255m              WELKOM BIJ:              ")
@@ -2249,7 +2249,7 @@ def startscreen():
         print(" ╔═══════════════════════════════════╗ ")
         print(" ║ << DRUK OP ENTER OM TE STARTEN >> ║ ")
         print(" ╚═══════════════════════════════════╝ ")
-        print("\033[38;2;64;64;64m\n ᴹⁱᵗᶜʰᵉˡ ᴷˡⁱʲⁿ                 " + version + " \033[0m")
+        print("\033[38;2;64;64;64m\n ᴹⁱᵗᶜʰᵉˡ ᴷˡⁱʲⁿ                   " + version + " \033[0m")
         time.sleep(0.3)
         clear()
         startscreen()
