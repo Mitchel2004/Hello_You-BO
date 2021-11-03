@@ -9,5 +9,6 @@
 ## Veel plezier!
 ---
 #### Huidige gameversie: 1.0.0 (2021-11-03)
+#### Alleen voor Windows gebruikers beschikbaar.
 ---
 ### Deze textbased applicatie is de BO eindopdracht van periode 1, leerjaar 1 (2021-2022) van het Mediacollege Amsterdam.
