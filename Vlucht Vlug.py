@@ -619,6 +619,7 @@ def question21():
         clear()
         end1()
     else:
+        answerednumber.questionsanswered -= 1
         print("\033[38;2;192;0;0mTyp alleen de letters A of B!\n\033[38;2;192;192;0m")
         t = 3
         while t != 0:
@@ -649,6 +650,7 @@ def question20():
         clear()
         question21()
     else:
+        answerednumber.questionsanswered -= 1
         print("\033[38;2;192;0;0mTyp alleen de letters A of B!\n\033[38;2;192;192;0m")
         t = 3
         while t != 0:
@@ -851,6 +853,7 @@ def question17():
         clear()
         end4()
     else:
+        answerednumber.questionsanswered -= 1
         print("\033[38;2;192;0;0mTyp alleen de letters A of B!\n\033[38;2;192;192;0m")
         t = 3
         while t != 0:
@@ -895,6 +898,7 @@ def question16():
         clear()
         question4()
     else:
+        answerednumber.questionsanswered -= 1
         print("\033[38;2;192;0;0mTyp alleen de letters A, B of C!\n\033[38;2;192;192;0m")
         t = 3
         while t != 0:
@@ -1004,6 +1008,7 @@ def question14():
         clear()
         question18()
     else:
+        answerednumber.questionsanswered -= 1
         print("\033[38;2;192;0;0mTyp alleen de letters A of B!\n\033[38;2;192;192;0m")
         t = 3
         while t != 0:
@@ -1034,6 +1039,7 @@ def question13():
         clear()
         question17()
     else:
+        answerednumber.questionsanswered -= 1
         print("\033[38;2;192;0;0mTyp alleen de letters A of B!\n\033[38;2;192;192;0m")
         t = 3
         while t != 0:
@@ -1064,6 +1070,7 @@ def question12():
         clear()
         question17()
     else:
+        answerednumber.questionsanswered -= 1
         print("\033[38;2;192;0;0mTyp alleen de letters A of B!\n\033[38;2;192;192;0m")
         t = 3
         while t != 0:
@@ -1094,6 +1101,7 @@ def question11():
         clear()
         question12()
     else:
+        answerednumber.questionsanswered -= 1
         print("\033[38;2;192;0;0mTyp alleen de letters A of B!\n\033[38;2;192;192;0m")
         t = 3
         while t != 0:
@@ -1125,6 +1133,7 @@ def question10():
         clear()
         end1()
     else:
+        answerednumber.questionsanswered -= 1
         print("\033[38;2;192;0;0mTyp alleen de letters A of B!\n\033[38;2;192;192;0m")
         t = 3
         while t != 0:
@@ -1155,6 +1164,7 @@ def question9():
         clear()
         question17()
     else:
+        answerednumber.questionsanswered -= 1
         print("\033[38;2;192;0;0mTyp alleen de letters A of B!\n\033[38;2;192;192;0m")
         t = 3
         while t != 0:
@@ -1192,6 +1202,7 @@ def question8():
         clear()
         question9()
     else:
+        answerednumber.questionsanswered -= 1
         print("\033[38;2;192;0;0mTyp alleen de letters A, B of C!\n\033[38;2;192;192;0m")
         t = 3
         while t != 0:
@@ -1806,6 +1817,7 @@ def question7():
         clear()
         question10()
     else:
+        answerednumber.questionsanswered -= 1
         print("\033[38;2;192;0;0mTyp alleen de letters A, B of C!\n\033[38;2;192;192;0m")
         t = 3
         while t != 0:
@@ -1845,6 +1857,7 @@ def question6():
         clear()
         question4()
     else:
+        answerednumber.questionsanswered -= 1
         print("\033[38;2;192;0;0mTyp alleen de letters A of B!\n\033[38;2;192;192;0m")
         t = 3
         while t != 0:
@@ -1884,6 +1897,7 @@ def question5():
         clear()
         question4()
     else:
+        answerednumber.questionsanswered -= 1
         print("\033[38;2;192;0;0mTyp alleen de letters A of B!\n\033[38;2;192;192;0m")
         t = 3
         while t != 0:
@@ -1970,6 +1984,7 @@ def question4():
             clear()
             question7()
     else:
+        answerednumber.questionsanswered -= 1
         print("\033[38;2;192;0;0mTyp alleen de letters A, B of C!\n\033[38;2;192;192;0m")
         t = 3
         while t != 0:
@@ -2014,6 +2029,7 @@ def question3():
         clear()
         question7()
     else:
+        answerednumber.questionsanswered -= 1
         print("\033[38;2;192;0;0mTyp alleen de letters A, B of C!\n\033[38;2;192;192;0m")
         t = 3
         while t != 0:
@@ -2051,6 +2067,7 @@ def question2():
         clear()
         question4()
     else:
+        answerednumber.questionsanswered -= 1
         print("\033[38;2;192;0;0mTyp alleen de letters A, B of C!\n\033[38;2;192;192;0m")
         t = 3
         while t != 0:
@@ -2093,6 +2110,7 @@ def question1():
         clear()
         question3()
     else:
+        answerednumber.questionsanswered -= 1
         print("\033[38;2;192;0;0mTyp alleen de letters A, B of C!\n\033[38;2;192;192;0m")
         t = 3
         while t != 0:
