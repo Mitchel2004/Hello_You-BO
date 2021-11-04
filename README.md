@@ -19,7 +19,7 @@
 
 ---
 
-#### Huidige gameversie: 1.0.0 (2021-11-03)
+#### Huidige gameversie: 1.0.1 (2021-11-04)
 #### Alleen voor Windows gebruikers beschikbaar.
 
 ---
