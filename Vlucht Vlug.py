@@ -19,7 +19,7 @@ def clear():
 def startmusic(musicFileName):
     mixer.init()
     mixer.music.load(musicFileName)
-    mixer.music.play()
+    mixer.music.play(loops=-1)
 
 today = datetime.date.today()
 birthday = datetime.date(2004, 5, 18)
@@ -2215,7 +2215,7 @@ def startscreen():
     if entervar.evar == False:
         keyboard.on_press_key("return", lambda _:entervartrue())
         # ⁰¹²³⁴⁵⁶⁷⁸⁹⁻ᵅᵝ·
-        version = "¹·⁰·⁰"
+        version = "¹·⁰·¹"
         print("\033[0m\033[38;2;0;0;255m              WELKOM BIJ:              ")
         print("   _    __ __              __     __   ")
         print("  | |  / // /__  __ _____ / /_   / /_  ")
